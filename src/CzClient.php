@@ -64,6 +64,9 @@ class CzClient
         if (false === $body) {
             throw new RequestException("接口请求失败，错误：" . curl_error($this->ch));
         }
+        if ('' === $body) {
+            throw new RequestException("接口返回空，检查AppCode是否正确");
+        }
         return json_decode($body, true);
     }
 
