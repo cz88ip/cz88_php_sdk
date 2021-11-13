@@ -24,6 +24,6 @@ var_dump($arr2);
 ## 联系方式
 
 - 客服QQ：1304576572
-- QQ群：482139657
-- PHP支持：进群后获取
+- QQ群：482139657(加群请备注：CZ88 PHPSDK)
+- PHP支持：进群后找“西柚”
 - 购买地址：https://market.aliyun.com/products/57002002/cmapi00046276.html
