@@ -1,0 +1,23 @@
+{
+    "name": "cz88/cz88_php_sdk",
+    "description": "纯真网络官方IP接口查询SDK",
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Charles",
+            "email": "ritaswc@163.com"
+        }
+    ],
+    "require": {
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cz88\\IpSDK\\": "src"
+        }
+    }
+}
