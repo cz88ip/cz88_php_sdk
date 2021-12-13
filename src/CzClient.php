@@ -11,7 +11,7 @@ class CzClient
     protected $timeout = 10;
 
     const URL = 'http://cz88.rtbasia.com/search';
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.3';
 
     /**
      * 修改请求超时时间，单位：秒
@@ -38,7 +38,6 @@ class CzClient
         curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($this->ch, CURLOPT_HTTPHEADER, $this->headers());
         curl_setopt($this->ch, CURLOPT_HEADER, 0);
-        curl_setopt($this->ch, CURLOPT_TIMEOUT, 10);
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -59,6 +58,7 @@ class CzClient
         if (!IpTool::isValidIPv4($ip)) {
             throw new InvalidIpAddressException("非法的IPv4地址：{$ip}");
         }
+        curl_setopt($this->ch, CURLOPT_TIMEOUT, $this->timeout);
         curl_setopt($this->ch, CURLOPT_URL, $this->buildUrl($ip));
         $body = curl_exec($this->ch);
         if (false === $body) {
